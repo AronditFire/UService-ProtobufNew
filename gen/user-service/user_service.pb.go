@@ -2,11 +2,12 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v6.31.1
-// source: user_service.proto
+// source: user-service/user_service.proto
 
 package uservicev1
 
 import (
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
@@ -56,11 +57,11 @@ func (x Roles) String() string {
 }
 
 func (Roles) Descriptor() protoreflect.EnumDescriptor {
-	return file_user_service_proto_enumTypes[0].Descriptor()
+	return file_user_service_user_service_proto_enumTypes[0].Descriptor()
 }
 
 func (Roles) Type() protoreflect.EnumType {
-	return &file_user_service_proto_enumTypes[0]
+	return &file_user_service_user_service_proto_enumTypes[0]
 }
 
 func (x Roles) Number() protoreflect.EnumNumber {
@@ -69,7 +70,7 @@ func (x Roles) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Roles.Descriptor instead.
 func (Roles) EnumDescriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{0}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{0}
 }
 
 // Логика авторизации
@@ -86,7 +87,7 @@ type RegisterRequest struct {
 
 func (x *RegisterRequest) Reset() {
 	*x = RegisterRequest{}
-	mi := &file_user_service_proto_msgTypes[0]
+	mi := &file_user_service_user_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -98,7 +99,7 @@ func (x *RegisterRequest) String() string {
 func (*RegisterRequest) ProtoMessage() {}
 
 func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[0]
+	mi := &file_user_service_user_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -111,7 +112,7 @@ func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterRequest.ProtoReflect.Descriptor instead.
 func (*RegisterRequest) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{0}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *RegisterRequest) GetUsername() string {
@@ -158,7 +159,7 @@ type RegisterResponse struct {
 
 func (x *RegisterResponse) Reset() {
 	*x = RegisterResponse{}
-	mi := &file_user_service_proto_msgTypes[1]
+	mi := &file_user_service_user_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -170,7 +171,7 @@ func (x *RegisterResponse) String() string {
 func (*RegisterResponse) ProtoMessage() {}
 
 func (x *RegisterResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[1]
+	mi := &file_user_service_user_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -183,7 +184,7 @@ func (x *RegisterResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterResponse.ProtoReflect.Descriptor instead.
 func (*RegisterResponse) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{1}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *RegisterResponse) GetUserId() int64 {
@@ -203,7 +204,7 @@ type LoginRequest struct {
 
 func (x *LoginRequest) Reset() {
 	*x = LoginRequest{}
-	mi := &file_user_service_proto_msgTypes[2]
+	mi := &file_user_service_user_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -215,7 +216,7 @@ func (x *LoginRequest) String() string {
 func (*LoginRequest) ProtoMessage() {}
 
 func (x *LoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[2]
+	mi := &file_user_service_user_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -228,7 +229,7 @@ func (x *LoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginRequest.ProtoReflect.Descriptor instead.
 func (*LoginRequest) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{2}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *LoginRequest) GetUsername() string {
@@ -255,7 +256,7 @@ type Tokens struct {
 
 func (x *Tokens) Reset() {
 	*x = Tokens{}
-	mi := &file_user_service_proto_msgTypes[3]
+	mi := &file_user_service_user_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -267,7 +268,7 @@ func (x *Tokens) String() string {
 func (*Tokens) ProtoMessage() {}
 
 func (x *Tokens) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[3]
+	mi := &file_user_service_user_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -280,7 +281,7 @@ func (x *Tokens) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Tokens.ProtoReflect.Descriptor instead.
 func (*Tokens) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{3}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Tokens) GetAccessToken() string {
@@ -306,7 +307,7 @@ type LoginResponse struct {
 
 func (x *LoginResponse) Reset() {
 	*x = LoginResponse{}
-	mi := &file_user_service_proto_msgTypes[4]
+	mi := &file_user_service_user_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -318,7 +319,7 @@ func (x *LoginResponse) String() string {
 func (*LoginResponse) ProtoMessage() {}
 
 func (x *LoginResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[4]
+	mi := &file_user_service_user_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -331,7 +332,7 @@ func (x *LoginResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginResponse.ProtoReflect.Descriptor instead.
 func (*LoginResponse) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{4}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *LoginResponse) GetTokens() *Tokens {
@@ -350,7 +351,7 @@ type RefreshRequest struct {
 
 func (x *RefreshRequest) Reset() {
 	*x = RefreshRequest{}
-	mi := &file_user_service_proto_msgTypes[5]
+	mi := &file_user_service_user_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -362,7 +363,7 @@ func (x *RefreshRequest) String() string {
 func (*RefreshRequest) ProtoMessage() {}
 
 func (x *RefreshRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[5]
+	mi := &file_user_service_user_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -375,7 +376,7 @@ func (x *RefreshRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RefreshRequest.ProtoReflect.Descriptor instead.
 func (*RefreshRequest) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{5}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *RefreshRequest) GetRefreshToken() string {
@@ -394,7 +395,7 @@ type RefreshResponse struct {
 
 func (x *RefreshResponse) Reset() {
 	*x = RefreshResponse{}
-	mi := &file_user_service_proto_msgTypes[6]
+	mi := &file_user_service_user_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -406,7 +407,7 @@ func (x *RefreshResponse) String() string {
 func (*RefreshResponse) ProtoMessage() {}
 
 func (x *RefreshResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[6]
+	mi := &file_user_service_user_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -419,7 +420,7 @@ func (x *RefreshResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RefreshResponse.ProtoReflect.Descriptor instead.
 func (*RefreshResponse) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{6}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *RefreshResponse) GetTokens() *Tokens {
@@ -438,7 +439,7 @@ type LogoutRequest struct {
 
 func (x *LogoutRequest) Reset() {
 	*x = LogoutRequest{}
-	mi := &file_user_service_proto_msgTypes[7]
+	mi := &file_user_service_user_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -450,7 +451,7 @@ func (x *LogoutRequest) String() string {
 func (*LogoutRequest) ProtoMessage() {}
 
 func (x *LogoutRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[7]
+	mi := &file_user_service_user_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -463,7 +464,7 @@ func (x *LogoutRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogoutRequest.ProtoReflect.Descriptor instead.
 func (*LogoutRequest) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{7}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *LogoutRequest) GetRefreshToken() string {
@@ -483,7 +484,7 @@ type GetProfileRequest struct {
 
 func (x *GetProfileRequest) Reset() {
 	*x = GetProfileRequest{}
-	mi := &file_user_service_proto_msgTypes[8]
+	mi := &file_user_service_user_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -495,7 +496,7 @@ func (x *GetProfileRequest) String() string {
 func (*GetProfileRequest) ProtoMessage() {}
 
 func (x *GetProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[8]
+	mi := &file_user_service_user_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -508,7 +509,7 @@ func (x *GetProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetProfileRequest.ProtoReflect.Descriptor instead.
 func (*GetProfileRequest) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{8}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetProfileRequest) GetUserId() int64 {
@@ -532,7 +533,7 @@ type UserProfileResponse struct {
 
 func (x *UserProfileResponse) Reset() {
 	*x = UserProfileResponse{}
-	mi := &file_user_service_proto_msgTypes[9]
+	mi := &file_user_service_user_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -544,7 +545,7 @@ func (x *UserProfileResponse) String() string {
 func (*UserProfileResponse) ProtoMessage() {}
 
 func (x *UserProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[9]
+	mi := &file_user_service_user_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -557,7 +558,7 @@ func (x *UserProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserProfileResponse.ProtoReflect.Descriptor instead.
 func (*UserProfileResponse) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{9}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *UserProfileResponse) GetId() int64 {
@@ -611,7 +612,7 @@ type UserListResponse struct {
 
 func (x *UserListResponse) Reset() {
 	*x = UserListResponse{}
-	mi := &file_user_service_proto_msgTypes[10]
+	mi := &file_user_service_user_service_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -623,7 +624,7 @@ func (x *UserListResponse) String() string {
 func (*UserListResponse) ProtoMessage() {}
 
 func (x *UserListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[10]
+	mi := &file_user_service_user_service_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -636,7 +637,7 @@ func (x *UserListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserListResponse.ProtoReflect.Descriptor instead.
 func (*UserListResponse) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{10}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *UserListResponse) GetUsers() []*UserProfileResponse {
@@ -656,7 +657,7 @@ type AdminRoleRequest struct {
 
 func (x *AdminRoleRequest) Reset() {
 	*x = AdminRoleRequest{}
-	mi := &file_user_service_proto_msgTypes[11]
+	mi := &file_user_service_user_service_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -668,7 +669,7 @@ func (x *AdminRoleRequest) String() string {
 func (*AdminRoleRequest) ProtoMessage() {}
 
 func (x *AdminRoleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_service_proto_msgTypes[11]
+	mi := &file_user_service_user_service_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -681,7 +682,7 @@ func (x *AdminRoleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AdminRoleRequest.ProtoReflect.Descriptor instead.
 func (*AdminRoleRequest) Descriptor() ([]byte, []int) {
-	return file_user_service_proto_rawDescGZIP(), []int{11}
+	return file_user_service_user_service_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *AdminRoleRequest) GetUserId() int64 {
@@ -698,11 +699,11 @@ func (x *AdminRoleRequest) GetRole() Roles {
 	return Roles_UNKNOWN
 }
 
-var File_user_service_proto protoreflect.FileDescriptor
+var File_user_service_user_service_proto protoreflect.FileDescriptor
 
-const file_user_service_proto_rawDesc = "" +
+const file_user_service_user_service_proto_rawDesc = "" +
 	"\n" +
-	"\x12user_service.proto\x12\fuser_profile\x1a\x1bgoogle/protobuf/empty.proto\"\x93\x01\n" +
+	"\x1fuser-service/user_service.proto\x12\fuser_profile\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"\x93\x01\n" +
 	"\x0fRegisterRequest\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x10\n" +
@@ -742,33 +743,34 @@ const file_user_service_proto_rawDesc = "" +
 	"\x05Roles\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\t\n" +
 	"\x05BUYER\x10\x01\x12\t\n" +
-	"\x05ADMIN\x10\x022\x83\x04\n" +
-	"\vUserService\x12I\n" +
-	"\bRegister\x12\x1d.user_profile.RegisterRequest\x1a\x1e.user_profile.RegisterResponse\x12@\n" +
-	"\x05Login\x12\x1a.user_profile.LoginRequest\x1a\x1b.user_profile.LoginResponse\x12K\n" +
-	"\fRefreshToken\x12\x1c.user_profile.RefreshRequest\x1a\x1d.user_profile.RefreshResponse\x12=\n" +
-	"\x06Logout\x12\x1b.user_profile.LogoutRequest\x1a\x16.google.protobuf.Empty\x12P\n" +
+	"\x05ADMIN\x10\x022\xb9\x05\n" +
+	"\vUserService\x12b\n" +
+	"\bRegister\x12\x1d.user_profile.RegisterRequest\x1a\x1e.user_profile.RegisterResponse\"\x17\x82\xd3\xe4\x93\x02\x11:\x01*\"\f/v1/register\x12V\n" +
+	"\x05Login\x12\x1a.user_profile.LoginRequest\x1a\x1b.user_profile.LoginResponse\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/v1/login\x12c\n" +
+	"\fRefreshToken\x12\x1c.user_profile.RefreshRequest\x1a\x1d.user_profile.RefreshResponse\"\x16\x82\xd3\xe4\x93\x02\x10:\x01*\"\v/v1/refresh\x12T\n" +
+	"\x06Logout\x12\x1b.user_profile.LogoutRequest\x1a\x16.google.protobuf.Empty\"\x15\x82\xd3\xe4\x93\x02\x0f:\x01*\"\n" +
+	"/v1/logout\x12p\n" +
 	"\n" +
-	"GetProfile\x12\x1f.user_profile.GetProfileRequest\x1a!.user_profile.UserProfileResponse\x12C\n" +
-	"\tListUsers\x12\x16.google.protobuf.Empty\x1a\x1e.user_profile.UserListResponse\x12D\n" +
+	"GetProfile\x12\x1f.user_profile.GetProfileRequest\x1a!.user_profile.UserProfileResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/profiles/{user_id}\x12Y\n" +
+	"\tListUsers\x12\x16.google.protobuf.Empty\x1a\x1e.user_profile.UserListResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\f/v1/profiles\x12f\n" +
 	"\n" +
-	"ChangeRole\x12\x1e.user_profile.AdminRoleRequest\x1a\x16.google.protobuf.EmptyB\x1bZ\x19userService.v1;uservicev1b\x06proto3"
+	"ChangeRole\x12\x1e.user_profile.AdminRoleRequest\x1a\x16.google.protobuf.Empty\" \x82\xd3\xe4\x93\x02\x1a:\x01*\x1a\x15/v1/users/change_roleB\x1bZ\x19userService.v1;uservicev1b\x06proto3"
 
 var (
-	file_user_service_proto_rawDescOnce sync.Once
-	file_user_service_proto_rawDescData []byte
+	file_user_service_user_service_proto_rawDescOnce sync.Once
+	file_user_service_user_service_proto_rawDescData []byte
 )
 
-func file_user_service_proto_rawDescGZIP() []byte {
-	file_user_service_proto_rawDescOnce.Do(func() {
-		file_user_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_user_service_proto_rawDesc), len(file_user_service_proto_rawDesc)))
+func file_user_service_user_service_proto_rawDescGZIP() []byte {
+	file_user_service_user_service_proto_rawDescOnce.Do(func() {
+		file_user_service_user_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_user_service_user_service_proto_rawDesc), len(file_user_service_user_service_proto_rawDesc)))
 	})
-	return file_user_service_proto_rawDescData
+	return file_user_service_user_service_proto_rawDescData
 }
 
-var file_user_service_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_user_service_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
-var file_user_service_proto_goTypes = []any{
+var file_user_service_user_service_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_user_service_user_service_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_user_service_user_service_proto_goTypes = []any{
 	(Roles)(0),                  // 0: user_profile.Roles
 	(*RegisterRequest)(nil),     // 1: user_profile.RegisterRequest
 	(*RegisterResponse)(nil),    // 2: user_profile.RegisterResponse
@@ -784,7 +786,7 @@ var file_user_service_proto_goTypes = []any{
 	(*AdminRoleRequest)(nil),    // 12: user_profile.AdminRoleRequest
 	(*emptypb.Empty)(nil),       // 13: google.protobuf.Empty
 }
-var file_user_service_proto_depIdxs = []int32{
+var file_user_service_user_service_proto_depIdxs = []int32{
 	4,  // 0: user_profile.LoginResponse.tokens:type_name -> user_profile.Tokens
 	4,  // 1: user_profile.RefreshResponse.tokens:type_name -> user_profile.Tokens
 	0,  // 2: user_profile.UserProfileResponse.role:type_name -> user_profile.Roles
@@ -811,27 +813,27 @@ var file_user_service_proto_depIdxs = []int32{
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_user_service_proto_init() }
-func file_user_service_proto_init() {
-	if File_user_service_proto != nil {
+func init() { file_user_service_user_service_proto_init() }
+func file_user_service_user_service_proto_init() {
+	if File_user_service_user_service_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_service_proto_rawDesc), len(file_user_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_service_user_service_proto_rawDesc), len(file_user_service_user_service_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_user_service_proto_goTypes,
-		DependencyIndexes: file_user_service_proto_depIdxs,
-		EnumInfos:         file_user_service_proto_enumTypes,
-		MessageInfos:      file_user_service_proto_msgTypes,
+		GoTypes:           file_user_service_user_service_proto_goTypes,
+		DependencyIndexes: file_user_service_user_service_proto_depIdxs,
+		EnumInfos:         file_user_service_user_service_proto_enumTypes,
+		MessageInfos:      file_user_service_user_service_proto_msgTypes,
 	}.Build()
-	File_user_service_proto = out.File
-	file_user_service_proto_goTypes = nil
-	file_user_service_proto_depIdxs = nil
+	File_user_service_user_service_proto = out.File
+	file_user_service_user_service_proto_goTypes = nil
+	file_user_service_user_service_proto_depIdxs = nil
 }

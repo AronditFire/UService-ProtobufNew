@@ -3,6 +3,8 @@ syntax = "proto3";
 package user_profile;
 
 import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+
 
 option go_package = "userService.v1;uservicev1";
 
@@ -66,16 +68,52 @@ message UserListResponse {
 
 service UserService {
   // Auth
-  rpc Register(RegisterRequest) returns (RegisterResponse);
-  rpc Login(LoginRequest) returns (LoginResponse);
-  rpc RefreshToken(RefreshRequest) returns (RefreshResponse);
-  rpc Logout(LogoutRequest) returns (google.protobuf.Empty);
+  rpc Register(RegisterRequest) returns (RegisterResponse) {
+    option (google.api.http) = {
+      post: "/v1/register"
+      body: "*"
+    };
+  };
 
-  rpc GetProfile(GetProfileRequest) returns (UserProfileResponse);
+  rpc Login(LoginRequest) returns (LoginResponse) {
+    option (google.api.http) = {
+      post: "/v1/login"
+      body: "*"
+    };
+  };
+
+  rpc RefreshToken(RefreshRequest) returns (RefreshResponse) {;
+    option (google.api.http) = {
+      post: "/v1/refresh"
+      body: "*"
+    };
+  };
+
+  rpc Logout(LogoutRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1/logout"
+      body: "*"
+    };
+  };
+
+  rpc GetProfile(GetProfileRequest) returns (UserProfileResponse) {;
+    option (google.api.http) = {
+      get: "/v1/profiles/{user_id}"
+    };
+  };
 
   // Admin
-  rpc ListUsers(google.protobuf.Empty) returns (UserListResponse);
-  rpc ChangeRole(AdminRoleRequest) returns (google.protobuf.Empty);
+  rpc ListUsers(google.protobuf.Empty) returns (UserListResponse) {;
+    option (google.api.http) = {
+      get: "/v1/profiles"
+    };
+  };
+  rpc ChangeRole(AdminRoleRequest) returns (google.protobuf.Empty) {;
+    option (google.api.http) = {
+      put: "/v1/users/change_role"
+      body: "*"
+    };
+  };
 }
 
 // Логика админа
