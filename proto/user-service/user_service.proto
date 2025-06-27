@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package user_profile;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "userService.v1;uservicev1";
+
+// Логика авторизации
+message RegisterRequest {
+  string username = 1;
+  string email = 2;
+  string FIO = 3; // Фамилия, имя, отчество
+  string phoneNumber = 4;
+  string password = 5;
+}
+
+message RegisterResponse {
+  int64 user_id = 1;
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message Tokens {
+  string access_token = 1;
+  string refresh_token = 2;
+}
+
+message LoginResponse {
+  Tokens tokens = 1;
+}
+
+message RefreshRequest { // Обновление токенов
+  string refresh_token = 1;
+}
+
+message RefreshResponse {
+  Tokens tokens = 1;
+}
+
+message LogoutRequest {
+  string refresh_token = 1; // удаляем указанный refresh token
+}
+
+// Логика профиля пользователя
+message GetProfileRequest {
+  int64 user_id = 1;
+}
+
+message UserProfileResponse { // Ответ без пароля для безопасности
+  int64 id = 1;
+  string username = 2;
+  string email = 3;
+  string FIO = 4; // Фамилия, имя, отчество
+  string phoneNumber = 5;
+  Roles role = 6; // Роль пользователя
+  // to commit
+}
+
+message UserListResponse {
+  repeated UserProfileResponse users = 1; // Список пользователей
+}
+
+service UserService {
+  // Auth
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc RefreshToken(RefreshRequest) returns (RefreshResponse);
+  rpc Logout(LogoutRequest) returns (google.protobuf.Empty);
+
+  rpc GetProfile(GetProfileRequest) returns (UserProfileResponse);
+
+  // Admin
+  rpc ListUsers(google.protobuf.Empty) returns (UserListResponse);
+  rpc ChangeRole(AdminRoleRequest) returns (google.protobuf.Empty);
+}
+
+// Логика админа
+enum Roles { // выбор роли
+  UNKNOWN = 0;
+  BUYER = 1;
+  ADMIN = 2;
+}
+
+message AdminRoleRequest{
+    int64 user_id = 1;
+    Roles role = 2;
+}
